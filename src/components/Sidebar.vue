@@ -2,7 +2,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="../assets/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -24,23 +24,15 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a  class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          
+
           <li class="nav-item">
-            <a class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
+            <RouterLink :to="{ name: 'home' }" :class="$route.name == 'home' ? 'active' : ''" class="nav-link"> <i
+                class="nav-icon fas fa-tachometer-alt"></i> Trang Chủ</RouterLink>
+          </li>
+
+          <li class="nav-item">
+            <RouterLink :to="{ name: 'profile' }" :class="$route.name == 'profile' ? 'active' : ''" class="nav-link"> <i
+                class="nav-icon fas fa-th"></i> Profile</RouterLink>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -110,6 +102,7 @@
 </template>
 <script>
 import * as $ from 'jquery';
+import { RouterLink, RouterView } from 'vue-router'
 export default {
   mounted() {
     $('[data-widget="treeview"]').Treeview('init');

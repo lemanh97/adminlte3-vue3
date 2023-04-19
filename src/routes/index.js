@@ -1,8 +1,9 @@
 import { createRouter,createWebHistory } from "vue-router";
 import auth from "./authrouter";
 import dashboard from "./dashboard"
+import users from "./users";
 
-const routes = [...auth,...dashboard]
+const routes = [...auth,...dashboard,...users]
 
 const router = createRouter({
     history: createWebHistory(),

@@ -7,7 +7,7 @@
       <div class="content-wrapper">
         <section class="content">
           <div class="container-fluid">
-            <ExampleForm></ExampleForm>
+            <router-view></router-view>
             
           </div>
         </section>
@@ -23,7 +23,6 @@
 
 
 import Preloader from "../components/Preloader.vue"
-import ExampleForm from "../components/ExampleForm.vue"
 import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
 import Footer from "../components/Footer.vue";
@@ -36,8 +35,7 @@ export default {
     Navbar,
     Sidebar,
     Footer,
-    ControlSidebar,
-    ExampleForm
+    ControlSidebar
   },
  
 

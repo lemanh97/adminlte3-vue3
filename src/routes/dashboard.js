@@ -1,10 +1,17 @@
 const dashboard = [
     {
-        path: '',
+        path: '/',
         component: () => import('../layouts/DashboardMaster.vue'),
-        meta: {
-            title:'Trang chủ'
-        }
+        children:[
+            {
+                path:'',
+                name: 'home',
+                component : () => import('../views/users/home.vue'),
+                meta: {
+                    title: 'Trang Chủ'
+                },
+            }
+        ]
     }
 ]
 
